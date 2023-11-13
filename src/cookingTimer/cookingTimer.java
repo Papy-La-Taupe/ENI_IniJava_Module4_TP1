@@ -20,7 +20,7 @@ public class cookingTimer {
 		//fonction principale du calcul
 	public static int calculatingTimer(String meat, String cooking, int weight) {
 	
-		if (meat == "beef") {
+		if ("beef".equals(meat)) {
 			switch (cooking) {
 			case "blue" :
 				timer = (weight*beefBlueRef)/beefRef;
@@ -39,7 +39,7 @@ public class cookingTimer {
 				break;
 			}
 		}
-		else if(meat == "pork") {
+		else if("pork".equals(meat)) {
 			switch (cooking) {
 			case "blue" :
 				timer = (weight*porkBlueRef)/porkRef;
@@ -67,14 +67,12 @@ public class cookingTimer {
 		System.out.println("choisissez beef ou pork :");
 		meatChoice = scanner.nextLine();
 		System.out.println("choisissez blue, cooked ou done :");
-		cookChoice = scanner.nextLine();
-			//scanner dans le vide pour changer le buffer
-		scanner.nextInt();
+		cookingChoice = scanner.nextLine();
 		System.out.println("indiquez un poids en grammes");
 		weightChoice = scanner.nextInt();
 		timer = calculatingTimer(meatChoice, cookingChoice, weightChoice);
 		System.out.println("");
-		System.out.println("Pour cuire " + cookingChoice + " " + weightChoice + "g of " + meatChoice + ", il vous faudra " + timer*60 + " secondes.");
+		System.out.println("Pour cuire " + cookingChoice + " " + weightChoice + "g of " + meatChoice + ", il vous faudra " + timer + " secondes.");
 		
 		
 		
